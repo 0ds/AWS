@@ -1,0 +1,29 @@
+Assignments:-
+================
+1. Expand their existing VPCs.
+2. Difference b/w creating CIDR blocks and Subnets
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Topics_Undergone:-
+=================
+
+1. AWS Direct Connect.
+2. Network Protocol, VLAN, VLAN trunking
+3. DNS and its Types
+4. VPC Design & Limits
+5. Sharing my subnet with other AWS account
+6. 
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+Points To Remember:-
+===================
+
+1. Main Route_Table cant be deleted.
