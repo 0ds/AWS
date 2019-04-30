@@ -1,0 +1,99 @@
+AWS Direct Connect URL's:-
+1. AWS Direct connect: https://docs.aws.amazon.com/aws-technical-content/latest/aws-vpc-connectivity-options/aws-direct-connect-network-to-amazon.html
+2. AWS Direct connect Gateway: https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways.html
+3. AWS Direct connectpartners: https://aws.amazon.com/directconnect/partners/
+4. Pricing: https://aws.amazon.com/directconnect/pricing/
+
+"AWS Direct Connect links an internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit
+Ethernet fiber-optic cable. One end of the cable is connected to an on-premises router, the other to an AWS Direct Connect router.
+Create virtual interfaces directly into the AWS cloud and Amazon Virtual Private Cloud, bypassing Internet service providers in 
+the network path"
+
+Architecture:-
+     Connection from Private Network to the AWS can be establiashed in two ways
+     1. Internet Based Connection
+     2. Direct Connection
+     Chossing AWS Direct Connection over Internet based is imp. bocause This private connection can reduce network costs, 
+     increase bandwidth throughput, and provide a more consistent network experience than internet-based connections. 
+
+
+
+                                                                                  _________________________
+Architecture:-                               802.1Q-Trunking                     |  / VPC1 ---> VLan No. 1 |
+                    VLan No.  -----------------------||--------------------------| -- VPC2 ---> VLan No. 2 |
+                                             ___________________                 |  \ VPC3 ---> VLan No. 3 |
+                   __________               |       AWS         |               _______
+                  |DataCenter|   -------->  |DirectConnect( DX )|   ---------> |AWS VPC|
+                   ----------               |      Partner      |               -------
+                                             -------------------
+                                            50MBps..(These capacities may not be available from all AWS_Direct_Partners)
+                                            ..1GBps--to--10GBps( But this Range is 100% AVAILABLE from all AWS_Direct_Partners)
+                                            Throgh their various protocols such as MPLS circuit...OR.. more
+MPLS:-                                                                              <<.../
+------
+>>> URL:- https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching  <<<
+Multiprotocol Label Switching (MPLS) is a routing technique in telecommunications 
+networks that directs data from one node to the next based on short path labels 
+rather than long network addresses, thus avoiding complex lookups in a routing 
+table and speeding traffic flows.[1] The labels identify virtual links (paths) 
+between distant nodes rather than endpoints. MPLS can encapsulate packets of various
+network protocols, hence the "multiprotocol" reference on its name. MPLS supports a 
+range of access technologies, including T1/E1, ATM, Frame Relay, and DSL.
+
+Network Protocols:-
+-------------------
+A network protocol is a set of established rules that dictates how to format, transmit and receive data so computer 
+network devices -- from servers and routers to endpoints -- can communicate regardless of the differences in their 
+underlying infrastructures, designs or standards.
+
+AWS DIrect_Connect_Gateway:-
+---------------------------
+URL: https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways.html
+
+You can use an AWS Direct Connect gateway to connect your AWS Direct Connect connection over a private virtual interface 
+to one or more VPCs in your account that are located in the same or different Regions. You associate a Direct Connect 
+gateway with the virtual private gateway for the VPC. Then, create a private virtual interface for your AWS Direct Connect
+connection to the Direct Connect gateway. You can attach multiple private virtual interfaces to your Direct Connect gateway.
+A Direct Connect gateway is a globally available resource. You can create the Direct Connect gateway in any public Region
+and access it from all other public Regions. 
+
+
+
+                                                                                                                 > AWS_Region..1 <  
+                                                                                                         | virtual_private_gateway | ===> VPC in U.S West (N.California)
+                    AWS Direct                                                                          / 
+                    Connect                                                                           /
+                    Connection                                                                      /  
+ |Customer_NEtwork| ----------> | Private_Virtual_Interface..1 | -----> | GLOBAL_Connect_Gateway |<                                 > AWS_Region <
+                                | Private_Virtual_Interface..2 |                                    \
+                                               .                                                      \
+                                               .                                                        \
+                                               .                                                         | virtual_private_gateway | ===> VPC in U.S East (N.Virginia)
+                                               .                                                                 > AWS_Region..2 <
+                                | Private_Virtual_Interface ..3|                 
+                                                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
