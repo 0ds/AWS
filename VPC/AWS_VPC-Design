@@ -34,5 +34,6 @@ Hosts/Net: 4094                  (Private Internet)
 
 Creating a VPC:-
  Block sizes must be between a /16 netmask and /28 netmask.  -----------> this limit is must
- 
+            Therefore, Maximum CIDR block size ---> /16
+                       Minimum CIDR block size ---> /28
 ---------------------------------------------------------------------------------------- 
